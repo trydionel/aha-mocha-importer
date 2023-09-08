@@ -1,0 +1,37 @@
+{
+  "name": "jeff-at-aha.mocha-importer",
+  "description": "Mocha importer",
+  "version": "0.0.0",
+  "author": "jeff-at-aha",
+  "repository": {
+    "type": "git",
+    "url": "TODO: Add the GitHub URL to your extension in package.json"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^16.8.0"
+  },
+  "ahaExtension": {
+    "contributes": {
+      "endpoints": {
+        "mochaWebhook": {
+          "title": "Mocha webhook",
+          "entryPoint": "src/endpoints/mochaWebhook.ts",
+          "public": true
+        }
+      },
+      "views": {
+        "mochaResults": {
+          "title": "Mocha results",
+          "entryPoint": "src/views/mochaResults.js",
+          "host": "attribute",
+          "recordTypes": [
+            "Feature",
+            "Requirement",
+            "Epic"
+          ]
+        }
+      }
+    }
+  }
+}
